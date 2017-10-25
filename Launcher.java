@@ -6,5 +6,6 @@ public class Launcher {
 		logic.start();
 		GraphicsHandler graphics = new GraphicsHandler();
 		graphics.start();
+		InputHandler input = new InputHandler();
 	}
 }
