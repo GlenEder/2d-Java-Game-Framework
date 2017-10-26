@@ -8,7 +8,7 @@ public class GraphicsHandler extends JPanel implements Runnable{
 	private boolean running = false;		//if game is running
 	private int FPS = 0;					//frames per second 
 	private int fpsLimit = 60;				//frame rate limit
-	private int width, height = 0;			
+	private int width, height = 0;		
 
 	public GraphicsHandler() {
 		init();
