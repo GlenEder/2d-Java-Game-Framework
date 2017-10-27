@@ -1,9 +1,12 @@
 import java.io.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
+import java.util.HashMap;
 
 public class ImageHandler {
 	
+	private static HashMap images = new HashMap<String, BufferedImage>();
+
 
 	public static BufferedImage loadImageFromFile(String file) {
 		BufferedImage img = null;
@@ -14,6 +17,14 @@ public class ImageHandler {
 		}
 
 		return img;
+	}
+
+	public static void addImageToHashMap(String key, BufferedImage img) {
+		images.put(key, img);
+	}
+
+	public static BufferedImage getImageFromMap(String key) {
+		return (BufferedImage)images.get(key);
 	}
 
 }
