@@ -14,9 +14,7 @@ public class LogicHandler implements Runnable{
 	}
 
 	public void init() {
-		ImageHandler.addImageToHashMap("ErrorBlock", ImageHandler.loadImageFromFile("ErrorBlock.png"));
-		MapHandler.loadMap("testMap");
-		MapHandler.printMap();
+		
 	}
 
 	public void run() {
