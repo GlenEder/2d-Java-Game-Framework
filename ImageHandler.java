@@ -11,7 +11,7 @@ public class ImageHandler {
 	public static BufferedImage loadImageFromFile(String file) {
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File(file));
+			img = ImageIO.read(new File("Assets/Sprites/" + file));
 		}catch (Exception e) {
 			System.out.println("Error loading " + file);
 		}

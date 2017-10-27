@@ -51,6 +51,9 @@ public class MapHandler {
 	}
 
 	public static void drawMap(Graphics2D g) {
+		if(map == null) {
+			return;
+		}
 		for(int i = 0; i < map.length; i++) {
 			for(int j = 0; j < map[i].length; j++) {
 				g.drawImage(getTileImage(map[i][j]), j * tileSize, i * tileSize, null);
@@ -63,7 +66,7 @@ public class MapHandler {
 
 		switch (c) {
 			default:
-				img = ImageHandler.getImageFromMap("Sprite");
+				img = ImageHandler.getImageFromMap("ErrorBlock");
 				break;
 			}
 		
