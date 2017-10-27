@@ -1,11 +1,23 @@
 
 
 public class Launcher {
+
+	private static LogicHandler logic;
+	private static GraphicsHandler graphics;
+	private static InputHandler input;
+
 	public static void main(String[] args) {
-		LogicHandler logic = new LogicHandler();
+		logic = new LogicHandler();
 		logic.start();
-		GraphicsHandler graphics = new GraphicsHandler();
+		graphics = new GraphicsHandler();
 		graphics.start();
-		InputHandler input = new InputHandler();
+		input = new InputHandler();
+	}
+
+	public static void exitGame() {
+		System.out.println("Exiting Game...");
+		graphics.stop();
+		logic.stop();
+		System.exit(0);
 	}
 }

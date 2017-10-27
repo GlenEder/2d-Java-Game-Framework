@@ -1,8 +1,8 @@
-import javax.swing.JFrame;
-import java.awt.Canvas;
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
-public class Display {
+public class Display{
 
 	private static JFrame frame;
 	private static Canvas canvas;
@@ -13,7 +13,7 @@ public class Display {
 	public static void createDisplay() {
 		frame = new JFrame(title);
 		frame.setSize(width, height);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
 
@@ -22,6 +22,14 @@ public class Display {
 		canvas.setPreferredSize(new Dimension(width, height));
 		canvas.setVisible(true);
 		frame.add(canvas);
+		frame.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				if(JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Confirm Quit", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+					Launcher.exitGame();
+				}
+			}
+		});
 
 		frame.setVisible(true);
 	}
@@ -53,4 +61,6 @@ public class Display {
 	public static Canvas getCanvas() {
 		return canvas;
 	}
+
+	
 }

@@ -77,9 +77,9 @@ public class GraphicsHandler extends JPanel implements Runnable{
 	public synchronized void stop() {
 		if(thread != null) {
 			try {
-				thread.join();
+				thread.interrupt();
 			}catch (Exception e) {
-				System.out.println("Error joining graphics handler thread.");
+				System.out.println("Error closing graphics handler thread.");
 			}
 		}
 	}

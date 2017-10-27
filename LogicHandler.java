@@ -60,9 +60,9 @@ public class LogicHandler implements Runnable{
 	public synchronized void stop() {
 		if(thread != null) {
 			try {
-				thread.join();
+				thread.interrupt();
 			}catch (Exception e) {
-				System.out.println("Error joining logic handler thread.");
+				System.out.println("Error closing logic handler thread.");
 			}
 		}
 	}
