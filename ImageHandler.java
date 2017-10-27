@@ -7,6 +7,14 @@ public class ImageHandler {
 	
 	private static HashMap images = new HashMap<String, BufferedImage>();
 
+	public ImageHandler() {
+		init();
+	}
+
+	private static init() {
+		
+	}
+
 
 	public static BufferedImage loadImageFromFile(String file) {
 		BufferedImage img = null;

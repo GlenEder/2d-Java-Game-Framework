@@ -5,6 +5,7 @@ public class Launcher {
 	private static LogicHandler logic;
 	private static GraphicsHandler graphics;
 	private static InputHandler input;
+	private static ImageHandler imageHandler;
 
 	public static void main(String[] args) {
 		logic = new LogicHandler();
@@ -12,6 +13,7 @@ public class Launcher {
 		graphics = new GraphicsHandler();
 		graphics.start();
 		input = new InputHandler();
+		imageHandler = new ImageHandler();
 	}
 
 	public static void exitGame() {
