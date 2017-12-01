@@ -9,6 +9,8 @@ public class MapHandler {
 	private static String currentLevel;
 	private static int tileSize = 32;
 
+	private static String spliter = " ";
+
 
 	public static void loadMap(String level) {
 		currentLevel = level;
@@ -21,7 +23,7 @@ public class MapHandler {
 			map = new char[height][width];
 			int y = 0;
 			while((line = br.readLine()) != null) {
-				String[] parts = line.split(" ");
+				String[] parts = line.split(spliter);
 				for(int i = 0; i < parts.length; i++) {
 					map[y][i] = parts[i].charAt(0);
 				}	
