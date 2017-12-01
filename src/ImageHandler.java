@@ -11,7 +11,7 @@ public class ImageHandler {
 		init();
 	}
 
-	private static init() {
+	private static void init() {
 		
 	}
 
